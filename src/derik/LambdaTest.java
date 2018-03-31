@@ -19,6 +19,15 @@ public class LambdaTest {
 		System.out.println(result1);
 		System.out.println(result2);
 
+		// 没有入参和返回值时的lambda写法
+		MathOperate2 mathOperate2 = () -> {
+			int a = 12;
+			int b = 13;
+			int c = a + b;
+			System.out.println("It has not argument and return value. c=" + c);
+		};
+		mathOperate2.operate();
+
 	}
 
 	private static int operation(int a, int b, MathOperate mathOperate) {
@@ -32,6 +41,16 @@ public class LambdaTest {
 		default int operateDefault(int a, int b) {
 			return a + b;
 		}
+
+		static int operateStatic() {
+
+			return 1;
+		}
+	}
+
+	@FunctionalInterface
+	interface MathOperate2 {
+		void operate();
 	}
 
 }
