@@ -5,29 +5,23 @@ public class LambdaTest {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		// lambda
-		int result1 = operation(8, 8, (a, b) -> a + b);
+		/**
+		 * lambda和匿名类的对比
+		 */
 
-		// 传统写法
-		int result2 = operation(8, 8, new MathOperate() {
+		// 匿名类的写法，当参数使用
+		int result1 = operation(8, 8, new MathOperate() {
 			@Override
 			public int operate(int a, int b) {
 				return a + b;
 			}
 		});
 
-		System.out.println(result1);
-		System.out.println(result2);
+		// lambda，同样当参数使用
+		int result2 = operation(8, 8, (a, b) -> a + b);
 
-		// 没有入参和返回值时的lambda写法
-		MathOperate2 mathOperate2 = () -> {
-			int a = 12;
-			int b = 13;
-			int c = a + b;
-			System.out.println("It has not argument and return value. c=" + c);
-		};
-		mathOperate2.operate();
-
+		System.out.println("匿名类：" + result1);
+		System.out.println("Lambda：" + result2);
 	}
 
 	private static int operation(int a, int b, MathOperate mathOperate) {
@@ -37,20 +31,5 @@ public class LambdaTest {
 	@FunctionalInterface
 	interface MathOperate {
 		int operate(int a, int b);
-
-		default int operateDefault(int a, int b) {
-			return a + b;
-		}
-
-		static int operateStatic() {
-
-			return 1;
-		}
 	}
-
-	@FunctionalInterface
-	interface MathOperate2 {
-		void operate();
-	}
-
 }

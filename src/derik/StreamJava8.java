@@ -1,16 +1,8 @@
 package derik;
 
-import java.io.FileInputStream;
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
-import java.util.Random;
-import java.util.Set;
-import java.util.stream.Collector;
 import java.util.stream.Collectors;
-
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 public class StreamJava8 {
 

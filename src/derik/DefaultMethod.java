@@ -5,6 +5,10 @@ public class DefaultMethod {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
+		/**
+		 * 默认方法
+		 */
+		
 		MyDefaultMethodTest.operate();
 		
 		MyDefaultMethodTest myDefaultMethodTest = new MyDefaultMethodTest() {
@@ -20,7 +24,7 @@ public class DefaultMethod {
 
 		}
 		
-		//默认静态方法
+		//默认静态方法，不能通过对象访问
 		static void operate() {
 			System.out.println("It is operate() in MyDefaultMethodTest");
 		}
